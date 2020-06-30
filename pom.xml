@@ -85,7 +85,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.questionapp.Controllers.QuestionApp</mainClass>
+                            <mainClass>com.backend.Contronllers.BackendApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

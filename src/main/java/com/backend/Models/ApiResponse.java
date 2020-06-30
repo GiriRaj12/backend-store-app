@@ -1,8 +1,19 @@
 package com.backend.Models;
 
+import java.util.List;
+
 public class ApiResponse {
     private boolean response;
-    private String data;
+    private String message;
+    private List<?> datas;
+
+    public List<?> getDatas() {
+        return datas;
+    }
+
+    public void setDatas(List<?> datas) {
+        this.datas = datas;
+    }
 
     public boolean isResponse() {
         return response;
@@ -12,11 +23,11 @@ public class ApiResponse {
         this.response = response;
     }
 
-    public String getData() {
-        return data;
+    public String getMessage() {
+        return message;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

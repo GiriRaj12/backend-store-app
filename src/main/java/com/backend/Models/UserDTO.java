@@ -1,10 +1,11 @@
 package com.backend.Models;
 
-
-public class UserModel {
+public class UserDTO {
     private String userName;
+
     private String passWord;
-    private boolean adminLogin;
+
+    private boolean admin;
 
     public String getUserName() {
         return userName;
@@ -22,11 +23,11 @@ public class UserModel {
         this.passWord = passWord;
     }
 
-    public boolean isAdminLogin() {
-        return adminLogin;
+    public boolean isAdmin() {
+        return admin;
     }
 
-    public void setAdminLogin(boolean adminLogin) {
-        this.adminLogin = adminLogin;
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
