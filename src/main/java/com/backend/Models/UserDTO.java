@@ -5,8 +5,6 @@ public class UserDTO {
 
     private String passWord;
 
-    private boolean admin;
-
     public String getUserName() {
         return userName;
     }
@@ -21,13 +19,5 @@ public class UserDTO {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
-    }
-
-    public boolean isAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(boolean admin) {
-        this.admin = admin;
     }
 }

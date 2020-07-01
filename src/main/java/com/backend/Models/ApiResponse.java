@@ -3,8 +3,11 @@ package com.backend.Models;
 import java.util.List;
 
 public class ApiResponse {
+
     private boolean response;
+
     private String message;
+
     private List<?> datas;
 
     public List<?> getDatas() {

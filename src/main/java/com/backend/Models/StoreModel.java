@@ -1,6 +1,7 @@
 package com.backend.Models;
 
 import java.util.List;
+import java.util.Map;
 
 public class StoreModel {
     private String id;
@@ -13,7 +14,15 @@ public class StoreModel {
 
     private List<Double> geoLocations;
 
-    private String ipAddress;
+    private Map<String, Integer> ratingsMap;
+
+    public Map<String, Integer> getRatingsMap() {
+        return ratingsMap;
+    }
+
+    public void setRatingsMap(Map<String, Integer> ratingsMap) {
+        this.ratingsMap = ratingsMap;
+    }
 
     public String getId() {
         return id;
@@ -53,13 +62,5 @@ public class StoreModel {
 
     public void setGeoLocations(List<Double> geoLocations) {
         this.geoLocations = geoLocations;
-    }
-
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
     }
 }

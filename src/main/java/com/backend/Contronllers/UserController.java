@@ -6,6 +6,8 @@ import com.backend.Services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+
 @Controller
 @RestController
 @CrossOrigin
@@ -20,7 +22,8 @@ public class UserController {
     public ApiResponse login(@RequestBody UserDTO userDTO){
         ApiResponse apiResponse = new ApiResponse();
         try{
-           apiResponse.setResponse(new UserService().loginService(userDTO));
+           apiResponse.setResponse(true);
+           apiResponse.setDatas(Collections.singletonList(new UserService().loginService(userDTO)));
         }
         catch (Exception e){
             apiResponse.setResponse(false);

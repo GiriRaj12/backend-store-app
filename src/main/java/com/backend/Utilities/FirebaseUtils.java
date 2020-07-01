@@ -1,22 +1,19 @@
 package com.backend.Utilities;
 
+import com.backend.Models.CategoryModel;
 import com.backend.Models.StoreModel;
 import com.backend.Models.UserModel;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QuerySnapshot;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 public class FirebaseUtils {
@@ -82,15 +79,61 @@ public class FirebaseUtils {
         }
     }
 
-    public List<StoreModel> getStores() {
+    public Map<String,StoreModel> getStores() {
         try {
+            Map<String,StoreModel> resultMap = new HashMap<>();
             ApiFuture<QuerySnapshot> future =
                     db.collection("Stores").get();
-            return future.get().getDocuments().stream().map(e -> e.toObject(StoreModel.class)).collect(Collectors.toList());
+            future.get().getDocuments().forEach(e -> addToMap(resultMap,e));
+            return resultMap;
         } catch (Exception e) {
             e.printStackTrace();
-            return new ArrayList<>();
+            return new HashMap<>();
+        }
+    }
+    public StoreModel getStores(String storeId) {
+        try {
+            DocumentReference docRef = FirebaseUtils.db.collection("Stores").document(storeId);
+            ApiFuture<DocumentSnapshot> future = docRef.get();
+            DocumentSnapshot documentSnapshot = future.get();
+            if(documentSnapshot.exists())
+               return documentSnapshot.toObject(StoreModel.class);
+            else return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
+    private void addToMap(Map<String, StoreModel> resultMap, QueryDocumentSnapshot e) {
+        StoreModel storeModel = e.toObject(StoreModel.class);
+        resultMap.put(storeModel.getId(),storeModel);
+    }
+
+    public void addCategory(String category) throws ExecutionException, InterruptedException {
+        DocumentReference docRef = FirebaseUtils.db.collection("Categories").document("Category");
+        ApiFuture<DocumentSnapshot> future = docRef.get();
+        DocumentSnapshot document = future.get();
+
+        if(document.exists()) {
+            CategoryModel categoryModel = document.toObject(CategoryModel.class);
+            categoryModel.getCategories().add(category);
+            docRef.set(categoryModel);
+        }
+        else {
+            CategoryModel categoryModel = new CategoryModel();
+            categoryModel.setCategories(Collections.singletonList(category));
+            docRef.set(categoryModel);
+        }
+    }
+
+    public List<?> getAllCategories() throws ExecutionException, InterruptedException {
+        DocumentReference docRef = FirebaseUtils.db.collection("Categories").document("Category");
+        ApiFuture<DocumentSnapshot> future = docRef.get();
+        DocumentSnapshot document = future.get();
+        if(document.exists())
+           return document.toObject(CategoryModel.class).getCategories();
+        else
+            return new ArrayList<>();
+    }
 }

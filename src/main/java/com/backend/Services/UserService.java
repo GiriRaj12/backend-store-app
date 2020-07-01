@@ -7,19 +7,17 @@ import com.backend.Utilities.StringUtilites;
 import com.google.gson.Gson;
 
 public class UserService {
-    public boolean loginService(UserDTO userDTO){
+    public UserModel loginService(UserDTO userDTO){
         System.out.println(new Gson().toJson(userDTO));
         validateUserDTO(userDTO);
         UserModel userModel = new FirebaseUtils().getUser(userDTO.getUserName());
         if(userModel == null)
-            throw new IllegalArgumentException((userDTO.isAdmin() ? "Admin" : "User") +" not exists");
+            throw new IllegalArgumentException( "User does not exists");
         else{
-            if(userDTO.isAdmin() != userModel.isAdminLogin())
-                throw new IllegalArgumentException("You are not allowed to proceed with this login");
             if(!userDTO.getPassWord().equals(userModel.getPassWord()))
                 throw new IllegalArgumentException("Invalid Credentials");
         }
-        return true;
+        return userModel;
     }
 
     private void validateUserDTO(UserDTO userDTO) {

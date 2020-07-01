@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;
+import java.util.Collections;
 
 @CrossOrigin
 @Controller
@@ -30,12 +31,12 @@ public class StoreController {
         return apiResponse;
     }
 
-    @GetMapping("/get/stores")
-    public ApiResponse getAllStores(){
+    @PostMapping("/edit/store")
+    public ApiResponse editStore(@RequestBody StoreModel storeModel){
         ApiResponse apiResponse = new ApiResponse();
         try{
-            apiResponse.setResponse(true);
-            apiResponse.setDatas(new StoreService().getAllStores());
+            System.out.println(new Gson().toJson(storeModel));
+            apiResponse.setResponse(new StoreService().editStore(storeModel));
         }
         catch (Exception e){
             apiResponse.setResponse(false);
@@ -44,32 +45,58 @@ public class StoreController {
         return apiResponse;
     }
 
+    @GetMapping("/get/stores")
+    public ApiResponse getAllStores(){
+        ApiResponse apiResponse = new ApiResponse();
+        try{
+            apiResponse.setResponse(true);
+            apiResponse.setDatas(Collections.singletonList(new StoreService().getAllStores()));
+        }
+        catch (Exception e){
+            apiResponse.setResponse(false);
+            apiResponse.setMessage(e.getMessage());
+        }
+        return apiResponse;
+    }
 
+    @GetMapping("/add")
+    public ApiResponse addCategory(@PathParam("category") String category){
+        ApiResponse apiResponse = new ApiResponse();
+        try{
+            apiResponse.setResponse(new StoreService().addCategory(category));
+        }
+        catch (Exception e){
+            apiResponse.setResponse(false);
+            apiResponse.setMessage(e.getMessage());
+        }
+        return apiResponse;
+    }
 
-//    @PostMapping("/add/rating")
-//    public ApiResponse addStore(@PathParam("userName")){
-//        ApiResponse apiResponse = new ApiResponse();
-//        try{
-//            apiResponse.setResponse(new StoreService().addStore(storeModel));
-//        }
-//        catch (Exception e){
-//            apiResponse.setResponse(false);
-//            apiResponse.setData(e.getMessage());
-//        }
-//        return apiResponse;
-//    }
-//
-//    @GetMapping("/add/bookmark")
-//    public ApiResponse addBookMark(@PathParam("username") String userName, @PathParam("id") String id){
-//        ApiResponse apiResponse = new ApiResponse();
-//        try{
-//            apiResponse.setResponse();
-//        }
-//        catch (Exception e){
-//            apiResponse.setResponse(false);
-//            apiResponse.setData(e.getMessage());
-//        }
-//        return apiResponse;
-//    }
+    @GetMapping("/get/categoris")
+    public ApiResponse geAllCategoris(){
+        ApiResponse apiResponse = new ApiResponse();
+        try{
+            apiResponse.setResponse(true);
+            apiResponse.setDatas(new StoreService().getAllCategory());
+        }
+        catch (Exception e){
+            apiResponse.setResponse(false);
+            apiResponse.setMessage(e.getMessage());
+        }
+        return apiResponse;
+    }
+
+    @GetMapping("/add/rating")
+    public ApiResponse addRating(@PathParam("storeId") String storeId, @PathParam("userName") String userName, @PathParam("rating") Integer rating){
+        ApiResponse apiResponse = new ApiResponse();
+        try{
+            apiResponse.setResponse(new StoreService().addRating(storeId,userName, rating));
+        }
+        catch (Exception e){
+            apiResponse.setResponse(false);
+            apiResponse.setMessage(e.getMessage());
+        }
+        return apiResponse;
+    }
 
 }

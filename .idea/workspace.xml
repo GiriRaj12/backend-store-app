@@ -21,15 +21,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a0791d4c-0158-4c31-ac72-a91103a35231" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/BackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/StoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/StoreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Contronllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Models/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Models/ApiResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Models/StoreModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Models/StoreModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Utilities/Categories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Utilities/Categories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/BackendApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Models/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Models/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Services/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Services/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/backend/Utilities/FirebaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/backend/Utilities/FirebaseUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/StoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Contronllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Models/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Models/ApiResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Models/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Models/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Services/StoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Services/StoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/backend/Utilities/FirebaseUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/backend/Utilities/FirebaseUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +66,40 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RunManager" selected="Application.StoreService">
+    <configuration name="StoreController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.backend.Contronllers.StoreController" />
+      <module name="Backend-App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.Contronllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoreService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.backend.Services.StoreService" />
+      <module name="Backend-App" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.backend.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StoreService" />
+        <item itemvalue="Application.StoreController" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -83,6 +123,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -94,10 +135,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="420" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1593507540686" />
-    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1593510893846">
+    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1593582030696">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1593510893846" />
+    <state x="533" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1593582030696" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1593549783026">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593549783026" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1593549783025">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1593549783025" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1593549783025">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1593549783025" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1593549783026">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1593549783026" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1593503987146">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
